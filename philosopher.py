@@ -60,7 +60,7 @@ class Philosopher:
   def receiver(self):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-    s.bind(('127.0.0.1', self.this_port))
+    s.bind(('', self.this_port))
     s.listen(1)
     print('listening')
     c, addr = s.accept()
